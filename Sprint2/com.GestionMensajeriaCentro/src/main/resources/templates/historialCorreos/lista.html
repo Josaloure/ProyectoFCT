@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Historial de Correos</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Listado de Correos Enviados</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Destinatario</th>
+                <th>Fecha Envío</th>
+                <th>Tipo Notificación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="correo : ${correos}">
+                <td th:text="${correo.idHistorial}"></td>
+                <td th:text="${correo.destinatarioEmail}"></td>
+                <td th:text="${correo.fechaEnvio}"></td>
+                <td th:text="${correo.tipoNotificacion}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/historialCorreos/formulario">Nuevo Correo</a>
+</body>
+</html>

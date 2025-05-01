@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tablón del Profesor</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Detalles del Tablón del Profesor</h2>
+
+    <p><strong>ID:</strong> <span th:text="${tablon.idTablonProfesor}"></span></p>
+    <p><strong>Nombre:</strong> <span th:text="${tablon.nombre}"></span></p>
+
+    <a href="/tablonProfesor/formulario">Crear nuevo</a>
+</body>
+</html>

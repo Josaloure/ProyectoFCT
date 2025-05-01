@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Comentarios de Tarea</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Listado de Comentarios</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Comentario</th>
+                <th>Fecha</th>
+                <th>Autor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="comentario : ${comentarios}">
+                <td th:text="${comentario.idComentario}"></td>
+                <td th:text="${comentario.contenido}"></td>
+                <td th:text="${#temporals.format(comentario.fechaComentario, 'yyyy-MM-dd HH:mm')}"></td>
+                <td th:text="${comentario.usuario.nombre}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/comentariosTarea/formulario">Nuevo Comentario</a>
+</body>
+</html>

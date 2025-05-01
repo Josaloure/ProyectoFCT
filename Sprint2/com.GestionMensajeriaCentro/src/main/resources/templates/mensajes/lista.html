@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listado de Mensajes</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Mensajes</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Contenido</th>
+                <th>Fecha creación</th>
+                <th>Publicado</th>
+                <th>Visible</th>
+                <th>Publicador</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="mensaje : ${mensajes}">
+                <td th:text="${mensaje.idMensaje}"></td>
+                <td th:text="${mensaje.titulo}"></td>
+                <td th:text="${mensaje.contenido}"></td>
+                <td th:text="${mensaje.fechaCreacion}"></td>
+                <td th:text="${mensaje.publicado}"></td>
+                <td th:text="${mensaje.visibleParaTodos}"></td>
+                <td th:text="${mensaje.publicador.nombre}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/api/mensajes/formulario">Nuevo Mensaje</a>
+</body>
+</html>

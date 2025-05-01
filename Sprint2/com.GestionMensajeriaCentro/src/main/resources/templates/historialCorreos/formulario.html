@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Enviar Correo</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Formulario de Envío de Correo</h2>
+
+    <form th:action="@{/historialCorreos/crear}" method="post" th:object="${correo}">
+        <label for="destinatarioEmail">Destinatario:</label>
+        <input type="email" id="destinatarioEmail" th:field="*{destinatarioEmail}" required />
+
+        <label for="fechaEnvio">Fecha de Envío:</label>
+        <input type="datetime-local" id="fechaEnvio" th:field="*{fechaEnvio}" required />
+
+        <label for="tipoNotificacion">Tipo de Notificación:</label>
+        <select id="tipoNotificacion" th:field="*{tipoNotificacion}">
+            <option value="TAREA">TAREA</option>
+            <option value="MENSAJE">MENSAJE</option>
+        </select>
+
+        <!-- Opcionalmente puedes incluir selección de tarea o mensaje relacionados si aplican -->
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

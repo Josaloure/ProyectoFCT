@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Crear Tablón de Centro</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Formulario: Nuevo Tablón del Centro</h2>
+
+    <form th:action="@{/tablonCentro/crear}" method="post" th:object="${tablonCentro}">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" th:field="*{nombre}" required />
+
+       
+        <button type="submit">Crear</button>
+    </form>
+</body>
+</html>
