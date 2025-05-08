@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nuevo Comentario</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Agregar Comentario a una Tarea</h2>
+
+    <form th:action="@{/comentariosTarea/crear}" method="post" th:object="${comentarioTarea}">
+        <label for="contenido">Comentario:</label>
+        <textarea id="contenido" th:field="*{contenido}" required></textarea>
+
+        <label for="fechaComentario">Fecha:</label>
+        <input type="datetime-local" id="fechaComentario" th:field="*{fechaComentario}" required />
+
+        <label for="idUsuario">ID Autor:</label>
+        <input type="number" id="idUsuario" th:field="*{usuario.idUsuario}" required />
+
+        <label for="idTarea">ID Tarea:</label>
+        <input type="number" id="idTarea" th:field="*{tarea.idTarea}" required />
+
+        <button type="submit">Comentar</button>
+    </form>
+</body>
+</html>

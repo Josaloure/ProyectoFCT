@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crear Tarea</title>
+  <link rel="stylesheet" href="../CSS/estilo.css" />
+  <link rel="stylesheet" href="../CSS/caso1.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body class="pagina-mensajeria">
+  <div class="header">
+    <a href="https://blogsaverroes.juntadeandalucia.es/iestorrredelosguzmanes/" target="_blank" class="logo-link">
+      <img src="../IMG/logotipo.png" alt="Logo" class="logo" />
+    </a>
+    <div class="header-btns">
+      <a href="Mensajeria.html" class="btn-header">MENSAJERÍA</a>
+      <a href="Index.html" class="btn-header">HOME</a>
+      <a href="javascript:history.back()" class="btn-header"><span class="arrow">&#8592;</span></a>
+      <a href="#" class="btn-header">USUARIO</a>
+      <a href="#" class="btn-header cerrar" onclick="cerrarVentana()">✕</a>
+    </div>
+  </div>
+
+  <div class="contenedor-formulario">
+    <h1>Crear Nueva Tarea</h1>
+    <form id="formTarea">
+      <input type="text" name="titulo" placeholder="Título" required />
+      <textarea name="descripcion" placeholder="Descripción"></textarea>
+      <input type="date" name="fechaCreacion" required />
+
+      <select name="prioridad" required>
+        <option value="">-- Prioridad --</option>
+        <option value="BAJA">Baja</option>
+        <option value="MEDIA">Media</option>
+        <option value="ALTA">Alta</option>
+      </select>
+
+      <select name="estado" required>
+        <option value="">-- Estado --</option>
+        <option value="PENDIENTE">Pendiente</option>
+        <option value="EN_PROGRESO">En Progreso</option>
+        <option value="COMPLETADA">Completada</option>
+      </select>
+
+      <select name="categoria" required>
+        <option value="">-- Categoría --</option>
+        <option value="GENERAL">General</option>
+        <option value="AVISO">Aviso</option>
+        <option value="URGENTE">Urgente</option>
+      </select>
+
+      <input type="number" name="emisor" placeholder="ID Emisor" required />
+      <input type="number" name="receptor" placeholder="ID Receptor" required />
+      <input type="number" name="tablonProfesor" placeholder="ID Tablón Profesor" required />
+
+      <div class="botones-form">
+        <button type="submit" class="boton-mensajeria">Crear</button>
+        <button type="reset" class="boton-cancelar">Cancelar</button>
+      </div>
+    </form>
+    <div id="mensajeResultado"></div>
+
+    <!-- Sección de Comentarios -->
+    <section class="comentarios-tarea">
+      <h2>Comentarios sobre la tarea</h2>
+
+      <ul id="listaComentarios"></ul>
+
+      <form id="formComentario">
+        <textarea id="contenidoComentario" placeholder="Escribe un comentario..." required></textarea>
+        <input type="hidden" id="idTareaComentario" />
+        <input type="hidden" id="idUsuarioComentario" value="1" /> <!-- Simulación -->
+        <button type="submit" class="boton-mensajeria">Publicar comentario</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="../JAVASCRIPT/caso1.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Se ha producido un error</h2>
+    <p th:text="${mensaje} ?: 'Ha ocurrido un problema inesperado. Intenta de nuevo más tarde.'"></p>
+    <a href="/">Volver al inicio</a>
+</body>
+</html>

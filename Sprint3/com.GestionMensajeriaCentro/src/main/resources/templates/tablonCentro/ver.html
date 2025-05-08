@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tablón del Centro</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Detalles del Tablón del Centro</h2>
+
+    <p><strong>ID:</strong> <span th:text="${tablon.idTablonCentro}"></span></p>
+    <p><strong>Nombre:</strong> <span th:text="${tablon.nombre}"></span></p>
+
+
+    <a href="/tablonCentro/formulario">Crear nuevo</a>
+</body>
+</html>

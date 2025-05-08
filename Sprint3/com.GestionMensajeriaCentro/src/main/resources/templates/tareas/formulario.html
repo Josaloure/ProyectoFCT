@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Crear Tarea</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Nueva Tarea</h2>
+    <form th:action="@{/tareas/crear}" method="post" th:object="${tarea}">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" th:field="*{titulo}" required />
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" th:field="*{descripcion}" required></textarea>
+
+        <!-- Asume que se selecciona el tablón por ID -->
+        <label for="idTablonProfesor">ID Tablón Profesor:</label>
+        <input type="number" id="idTablonProfesor" th:field="*{tablonProfesor.idTablonProfesor}" required />
+
+        <button type="submit">Guardar Tarea</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Historial de Correos</title>
+  <link rel="stylesheet" href="../CSS/estilo.css" />
+  <link rel="stylesheet" href="../CSS/caso5.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="header">
+    <a href="https://blogsaverroes.juntadeandalucia.es/iestorrredelosguzmanes/" target="_blank" class="logo-link">
+      <img src="../IMG/logotipo.png" alt="Logo" class="logo">
+    </a>
+    <div class="header-btns">
+      <a href="Mensajeria.html" class="btn-header">MENSAJERÍA</a>
+      <a href="Index.html" class="btn-header">HOME</a>
+      <a href="javascript:history.back()" class="btn-header"><span class="arrow">&#8592;</span></a>
+      <a href="#" class="btn-header cerrar" onclick="cerrarVentana()">✕</a>
+    </div>
+  </div>
+  <div class="contenedor-formulario">
+    <h1>Historial de Correos</h1>
+
+    <form id="formCorreo">
+      <input type="hidden" id="idHistorial" />
+      <input type="email" id="destinatarioEmail" placeholder="Correo destinatario" required />
+      <input type="datetime-local" id="fechaEnvio" required />
+      <select id="tipoNotificacion" required>
+        <option value="" disabled selected>Tipo de Notificación</option>
+        <option value="ALERTA">ALERTA</option>
+        <option value="RECORDATORIO">RECORDATORIO</option>
+      </select>
+      <input type="number" id="idTarea" placeholder="ID Tarea" />
+      <input type="number" id="idMensaje" placeholder="ID Mensaje" />
+
+      <div class="botones-form">
+        <button type="submit" class="boton-mensajeria">Guardar</button>
+        <button type="reset" class="boton-cancelar">Limpiar</button>
+      </div>
+    </form>
+
+    <div class="listado-historial">
+      <h2>Historial de Correos</h2>
+      <button class="boton-cargar" onclick="cargarHistorial()">Cargar Historial</button>
+      <ul id="listaCorreos"></ul>
+    </div>
+  </div>
+
+  <script src="../JAVASCRIPT/caso5.js"></script>
+</body>
+</html>

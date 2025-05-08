@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mensajería</title>
+  <link rel="stylesheet" href="../CSS/estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-mensajeria">
+
+  <div class="header">
+    <a href="https://blogsaverroes.juntadeandalucia.es/iestorrredelosguzmanes/" target="_blank" class="logo-link">
+      <img src="../IMG/logotipo.png" alt="Logo" class="logo">
+    </a>
+
+    <div class="header-btns">
+      <a href="Mensajeria.html" class="btn-header">MENSAJERÍA</a>
+      <a href="Index.html" class="btn-header">HOME</a>
+      <a href="javascript:history.back()" class="btn-header"><span class="arrow">&#8592;</span></a>
+      <a href="#" class="btn-header">USUARIO</a>
+      <a href="#" class="btn-header cerrar" onclick="cerrarVentana()">✕</a>
+    </div>
+  </div>
+
+  <div class="contenedor-botones">
+    <a href="Caso1.html" class="boton-mensajeria">ALTA MENSAJE PANEL</a>
+    <a href="Caso2.html" class="boton-mensajeria">GESTIÓN PANEL</a>
+    <a href="Caso3.html" class="boton-mensajeria">ALTA COMUNICACIÓN</a>
+    <a href="Caso4.html" class="boton-mensajeria">GESTIÓN COMUNICACIONES</a>
+    <a href="Caso5.html" class="boton-mensajeria">ENVÍO DE CORREO</a>
+  </div>
+
+  <script>
+    function cerrarVentana() {
+      if (window.close) {
+        window.close();
+      } else {
+        alert("Esta pestaña no puede cerrarse automáticamente por el navegador.");
+      }
+    }
+  </script>
+
+</body>
+</html>

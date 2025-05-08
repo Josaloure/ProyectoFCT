@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión Tablones Centro</title>
+  <link rel="stylesheet" href="../CSS/estilo.css">
+  <link rel="stylesheet" href="../CSS/caso4.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-mensajeria">
+  <div class="header">
+    <a href="https://blogsaverroes.juntadeandalucia.es/iestorrredelosguzmanes/" target="_blank" class="logo-link">
+      <img src="../IMG/logotipo.png" alt="Logo" class="logo">
+    </a>
+    <div class="header-btns">
+      <a href="Mensajeria.html" class="btn-header">MENSAJERÍA</a>
+      <a href="Index.html" class="btn-header">HOME</a>
+      <a href="javascript:history.back()" class="btn-header"><span class="arrow">&#8592;</span></a>
+      <a href="#" class="btn-header cerrar" onclick="cerrarVentana()">✕</a>
+    </div>
+  </div>
+
+  <div class="contenedor-formulario">
+    <h1>Gestión de Tablones de Centro</h1>
+
+    <form id="buscarTablonForm" class="formulario-busqueda">
+      <input type="number" name="idTablonCentro" placeholder="ID Tablón Centro">
+      <button class="boton-mensajeria" type="submit">Buscar</button>
+    </form>
+
+    <form id="listarUsuarioForm" class="formulario-busqueda">
+      <input type="number" name="idUsuario" placeholder="ID Usuario">
+      <button class="boton-mensajeria" type="submit">Listar por Usuario</button>
+    </form>
+
+    <form id="formTablon">
+      <input type="hidden" name="idTablonCentro">
+      <input type="text" name="nombre" placeholder="Nombre del Tablón" required>
+      <input type="number" name="idUsuario" placeholder="ID del Usuario" required>
+      <div class="botones-form">
+        <button type="submit" class="boton-mensajeria">Guardar</button>
+        <button type="button" onclick="eliminarTablon()" class="boton-cancelar">Eliminar</button>
+      </div>
+    </form>
+
+    <div id="resultadoTablon"></div>
+    <div id="mensajeTablon"></div>
+  </div>
+
+  <script src="../JS/tablonCentro.js" defer></script>
+</body>
+</html>

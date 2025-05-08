@@ -1,0 +1,134 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+.contenedor-formulario {
+  max-width: 650px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.botones-form {
+  display: flex;
+  gap: 12px;
+}
+
+.botones-form button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 48px;
+}
+
+.boton-mensajeria {
+  background-color: #586BE5;
+  color: #fff;
+  border: none;
+}
+
+.boton-mensajeria:hover {
+  background-color: #3e52c4;
+}
+
+.boton-cancelar {
+  background-color: #FFC107;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.boton-cancelar:hover {
+  background-color: #e0a800;
+}
+
+/* Comentarios */
+.comentarios-tarea {
+  margin-top: 40px;
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.comentarios-tarea h2 {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #444;
+}
+
+#listaComentarios {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#listaComentarios li {
+  background: #ffffff;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid #586BE5;
+  border-radius: 6px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+}
+
+#formComentario textarea {
+  width: 100%;
+  padding: 10px;
+  resize: vertical;
+  font-size: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#formComentario button {
+  background-color: #586BE5;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}

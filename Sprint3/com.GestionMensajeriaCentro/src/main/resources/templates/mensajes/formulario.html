@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nuevo Mensaje</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Crear Nuevo Mensaje</h2>
+
+    <form th:action="@{/mensajes/crear}" method="post" th:object="${mensaje}">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" th:field="*{titulo}" required /><br>
+
+        <label for="contenido">Contenido:</label>
+        <textarea id="contenido" th:field="*{contenido}" required></textarea><br>
+
+        <label for="fechaPublicacion">Fecha de Publicación:</label>
+        <input type="date" id="fechaPublicacion" th:field="*{fechaPublicacion}" /><br>
+
+        <label for="publicado">Publicado:</label>
+        <input type="checkbox" id="publicado" th:field="*{publicado}" /><br>
+
+        <label for="visibleParaTodos">Visible para todos:</label>
+        <input type="checkbox" id="visibleParaTodos" th:field="*{visibleParaTodos}" /><br>
+
+        <label for="idTablonCentro">ID del Tablón del Centro:</label>
+        <input type="number" id="idTablonCentro" th:field="*{tablonCentro.idTablonCentro}" required /><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

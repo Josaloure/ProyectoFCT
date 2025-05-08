@@ -1,0 +1,121 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor-formulario {
+  max-width: 600px;
+  margin: 80px auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-formulario h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.contenedor-formulario form {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formulario-busqueda {
+  flex-direction: row;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.formulario-busqueda input {
+  flex: 2;
+}
+
+.formulario-busqueda button {
+  flex: 1;
+  height: 48px;
+}
+
+.contenedor-formulario input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.botones-form {
+  display: flex;
+  gap: 12px;
+}
+
+.botones-form button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 48px;
+}
+
+.boton-mensajeria {
+  background-color: #586BE5;
+  color: #FFFFFF;
+  border: none;
+}
+
+.boton-mensajeria:hover {
+  background-color: #06188D;
+}
+
+.boton-cancelar {
+  background-color: #FFC107;
+  color: #000000;
+  border: 2px solid #000;
+}
+
+.boton-cancelar:hover {
+  background-color: #e0a800;
+}
+
+#resultadoTablon,
+#mensajeTablon {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  .formulario-busqueda {
+    flex-direction: column;
+  }
+
+  .formulario-busqueda button {
+    width: 100%;
+  }
+
+  .botones-form {
+    flex-direction: column;
+  }
+
+  .botones-form button {
+    width: 100%;
+  }
+}

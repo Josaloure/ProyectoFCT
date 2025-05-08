@@ -1,0 +1,64 @@
+.contenedor-formulario {
+    max-width: 600px;
+    margin: 80px auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contenedor-formulario h1,
+  .contenedor-formulario h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .contenedor-formulario form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .botones-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .boton-mensajeria {
+    background-color: #586BE5;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    flex: 1;
+  }
+  
+  .boton-cancelar {
+    background-color: #FFC107;
+    color: #000000;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    flex: 1;
+  }
+  
+  .resultado,
+  #mensajeGuardar {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+  }
+  

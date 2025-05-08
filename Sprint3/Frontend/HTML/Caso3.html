@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestor de Mensajes</title>
+  <link rel="stylesheet" href="../CSS/estilo.css">
+  <link rel="stylesheet" href="../CSS/caso3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-mensajeria">
+  <div class="header">
+    <a href="https://blogsaverroes.juntadeandalucia.es/iestorrredelosguzmanes/" target="_blank" class="logo-link">
+      <img src="../IMG/logotipo.png" alt="Logo" class="logo">
+    </a>
+    <div class="header-btns">
+      <a href="Mensajeria.html" class="btn-header">MENSAJERÍA</a>
+      <a href="Index.html" class="btn-header">HOME</a>
+      <a href="javascript:history.back()" class="btn-header"><span class="arrow">&#8592;</span></a>
+      <a href="#" class="btn-header">USUARIO</a>
+      <a href="#" class="btn-header cerrar" onclick="cerrarVentana()">✕</a>
+    </div>
+  </div>
+
+  <div class="contenedor-formulario">
+    <h1>Gestor de Mensajes</h1>
+
+    <form id="buscarMensajeForm" class="formulario-busqueda">
+      <input type="number" name="idMensaje" placeholder="ID del Mensaje">
+      <button class="boton-mensajeria" type="submit">Buscar</button>
+    </form>
+
+    <form id="filtrarPorTablonForm" class="formulario-busqueda">
+      <input type="number" name="idTablon" placeholder="ID Tablón Centro">
+      <button class="boton-mensajeria" type="submit">Filtrar por Tablón</button>
+    </form>
+
+    <form id="formGuardarMensaje">
+      <input type="text" name="titulo" placeholder="Título" required>
+      <textarea name="contenido" placeholder="Contenido" required></textarea>
+      <input type="date" name="fechaCreacion" required>
+      <input type="date" name="fechaPublicacion">
+
+      <select name="publicado">
+        <option value="false">No Publicado</option>
+        <option value="true">Publicado</option>
+      </select>
+
+      <select name="visibleParaTodos">
+        <option value="false">Solo visibles para algunos</option>
+        <option value="true">Visible para todos</option>
+      </select>
+
+      <input type="number" name="publicador" placeholder="ID Publicador" required>
+      <input type="number" name="tablonCentro" placeholder="ID Tablón Centro" required>
+
+      <div class="botones-form">
+        <button type="submit" class="boton-mensajeria">Guardar</button>
+        <button type="reset" class="boton-cancelar">Limpiar</button>
+      </div>
+    </form>
+
+    <div id="resultadoMensaje"></div>
+    <div id="mensajeFinal"></div>
+  </div>
+
+  <script src="../JS/mensajes.js" defer></script>
+</body>
+</html>
