@@ -1,0 +1,185 @@
+/* === BASE === */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+.pagina-mensajeria {
+  background-image: url('/api/img/fondo.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+/* === CABECERA COMÚN === */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: transparent;
+  min-height: 80px;
+  gap: 40px;
+}
+
+.logo-link {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.header-btns {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.btn-header {
+  background-color: #D9D9D9;
+  color: black;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  flex-shrink: 0;
+}
+
+.btn-header.cerrar {
+  background-color: #DC3545;
+  color: white;
+}
+
+.btn-header.activo {
+  background-color: #586BE5;
+  color: white;
+  cursor: default;
+}
+
+/* Contenedor que agrupa cerrar sesión + cerrar ventana */
+.logout-cerrar-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.logout-form {
+  margin: 0;
+}
+
+.logout-form .btn-header {
+  all: unset;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #D9D9D9;
+  border-radius: 4px;
+  color: black;
+}
+
+/* === FORMULARIO === */
+.contenedor-principal {
+  max-width: 600px;
+  margin: 120px auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.contenedor-principal h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+form:not(.logout-form) {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input,
+form textarea,
+form select {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  resize: vertical;
+}
+
+form button {
+  background-color: #586BE5;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #06188D;
+}
+
+#mensaje-feedback {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.form-boton {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.form-boton button {
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: #586BE5;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.form-boton button:hover {
+  background-color: #06188D;
+}
+.logout-cerrar-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.logout-form {
+  margin: 0;
+}
+
+.logout-form .btn-header {
+  all: unset;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #D9D9D9;
+  border-radius: 4px;
+  color: black;
+}

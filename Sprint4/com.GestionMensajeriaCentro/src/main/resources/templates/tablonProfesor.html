@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión Tablón Profesor</title>
+
+    <!-- Enlace al archivo de estilos correspondiente a esta vista -->
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/tablonProfesor.css}">
+
+    <!-- Fuente externa utilizada en la interfaz -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+    <!-- Inclusión de tokens CSRF para protección de formularios -->
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+</head>
+<body class="pagina-mensajeria">
+
+<!-- Cabecera de navegación principal del sistema -->
+<div class="header">
+    <!-- Logo -->
+    <a href="https://blogsaverroes.juntadeandalucia.es/iestorrredelosguzmanes/" target="_blank" class="logo-link">
+        <img src="/api/img/logotipo.png" alt="Logo" class="logo">
+    </a>
+
+    <!-- Botones agrupados -->
+    <div class="header-btns">
+        <a href="/api/indice" class="btn-header">Inicio</a>
+        <a href="javascript:history.back()" class="btn-header">Volver</a>
+        <span class="btn-header activo">Gestión Tablón Profesor</span>
+        <span sec:authentication="name" class="btn-header"></span>
+        <form th:action="@{/logout}" method="post" class="logout-form">
+            <button type="submit" class="btn-header">Cerrar sesión</button>
+        </form>
+    </div>
+
+    <!-- Botón separado, a la derecha -->
+    <button class="btn-header cerrar" onclick="window.close()">Cerrar</button>
+</div>
+
+<!-- Contenedor principal de la funcionalidad de gestión de tablones -->
+<div class="contenedor-principal">
+    <h1>Gestión de Tablón del Profesor</h1>
+
+    <!-- Formulario para la creación de un nuevo tablón -->
+    <form id="form-crear-tablon-profesor">
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre del tablón" required>
+        <input type="number" id="idUsuario" name="idUsuario" placeholder="ID del usuario" required>
+        <button type="submit">Crear Tablón</button>
+    </form>
+
+    <!-- Tabla que muestra los tablones existentes creados por profesores -->
+    <table id="tabla-tablon-profesor">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Usuario</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Las filas serán insertadas dinámicamente desde JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Inclusión del archivo JavaScript con la lógica para gestionar tablones del profesor -->
+<script th:src="@{/js/tablonProfesor.js}"></script>
+
+</body>
+</html>

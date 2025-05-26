@@ -1,0 +1,140 @@
+/* Define imagen de fondo general, elimina márgenes y padding por defecto,
+   establece la fuente principal y ocupa la altura completa del viewport */
+body, html {
+  background-image: url('/api/img/fondo.jpeg');
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+/* Ajuste del fondo para que cubra todo el área visible y esté centrado visualmente */
+.pagina-mensajeria {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+/* === Contenido Principal === */
+.contenedor-principal {
+  padding: 30px;
+  max-width: 1000px;
+  margin: 120px auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+/* === Formulario === */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+form input,
+form select,
+form button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background-color: #586BE5;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #06188D;
+}
+
+#feedback-correo {
+  text-align: center;
+  font-weight: bold;
+  color: green;
+  margin-bottom: 20px;
+}
+
+/* === Tabla === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #586BE5;
+  color: white;
+}
+
+td, th {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+button:active {
+  background-color: #1e7e34;
+}
+
+#tabla-correos td button {
+  background-color: #007bff;
+}
+
+#tabla-correos td button:hover {
+  background-color: #0056b3;
+}
+
+#tabla-correos td button:last-child {
+  background-color: #dc3545;
+}
+
+#tabla-correos td button:last-child:hover {
+  background-color: #c82333;
+}
+.header-btn-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.logout-form {
+  margin: 0;
+}
+
+.logout-form .btn-header {
+  all: unset;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #D9D9D9;
+  border-radius: 4px;
+  color: black;
+}

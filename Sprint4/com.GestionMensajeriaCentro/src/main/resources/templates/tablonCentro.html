@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión Tablón Centro</title>
+
+    <!-- Enlace a la hoja de estilos específica para esta vista -->
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/tablonCentro.css}">
+
+    <!-- Fuente tipográfica utilizada en la interfaz -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+    <!-- Inclusión de tokens CSRF necesarios para la seguridad de formularios -->
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+</head>
+
+<body class="pagina-mensajeria">
+
+<!-- Cabecera general con elementos de navegación -->
+<div class="header">
+    <!-- Logo -->
+    <a href="https://blogsaverroes.juntadeandalucia.es/iestorrredelosguzmanes/" target="_blank" class="logo-link">
+        <img src="/api/img/logotipo.png" alt="Logo" class="logo">
+    </a>
+
+    <!-- Botones principales -->
+    <div class="header-btns">
+        <a href="/api/indice" class="btn-header">Inicio</a>
+        <a href="javascript:history.back()" class="btn-header">Volver</a>
+        <span class="btn-header activo">Gestión Tablón Centro</span>
+        <span sec:authentication="name" class="btn-header"></span>
+        <form th:action="@{/logout}" method="post" class="logout-form">
+            <button type="submit" class="btn-header">Cerrar sesión</button>
+        </form>
+    </div>
+
+    <!-- Botón final separado -->
+    <button class="btn-header cerrar" onclick="window.close()">Cerrar</button>
+</div>
+
+<!-- Contenedor principal de la funcionalidad de gestión -->
+<div class="contenedor-principal">
+    <h1>Gestión de Tablones del Centro</h1>
+
+    <!-- Formulario para la creación de un nuevo tablón del centro -->
+    <form id="form-crear-tablon">
+        <!-- Campo para ingresar el nombre del tablón -->
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre del tablón" required>
+
+        <!-- Campo para ingresar el ID del usuario administrador asociado -->
+        <input type="number" id="idUsuario" name="idUsuario" placeholder="ID del usuario" required>
+
+        <!-- Botón para enviar el formulario y crear el tablón -->
+        <button type="submit">Crear Tablón</button>
+    </form>
+
+    <!-- Tabla que mostrará los tablones existentes del centro -->
+    <table id="tabla-tablones">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Usuario</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Las filas serán insertadas dinámicamente mediante JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Inclusión del archivo JavaScript asociado a la lógica de gestión de tablones -->
+<script th:src="@{/js/tablonCentro.js}"></script>
+
+</body>
+</html>

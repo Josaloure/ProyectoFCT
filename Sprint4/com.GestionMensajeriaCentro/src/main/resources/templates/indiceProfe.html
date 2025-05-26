@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Profesor</title>
+
+    <!-- Enlace al archivo de estilos utilizado por la vista del panel del profesor -->
+    <link rel="stylesheet" th:href="@{/css/indice.css}">
+</head>
+<body class="pagina-mensajeria">
+
+<!-- Cabecera general que incluye logotipo, navegación y controles de sesión -->
+<div class="header">
+    <!-- Enlace externo al sitio institucional con logotipo -->
+    <a href="https://blogsaverroes.juntadeandalucia.es/iestorrredelosguzmanes/" target="_blank" class="logo-link">
+        <img src="/api/img/logotipo.png" alt="Logo" class="logo">
+    </a>
+
+    <!-- Botones de navegación e información de usuario -->
+    <div class="header-btns">
+        <!-- Enlace a la página principal del sistema -->
+        <a th:href="@{/indice}" class="btn-header">Inicio</a>
+
+        <!-- Opción para volver a la página anterior del historial -->
+        <a href="javascript:history.back()" class="btn-header">Volver</a>
+
+        <!-- Indicador de la sección actual -->
+        <span class="btn-header activo">Panel Profesor</span>
+
+        <!-- Nombre del usuario autenticado -->
+        <span sec:authentication="name" class="btn-header"></span>
+
+        <!-- Formulario para finalizar la sesión de forma segura -->
+        <form th:action="@{/logout}" method="post" class="logout-form">
+            <button type="submit" class="btn-header">Cerrar sesión</button>
+        </form>
+
+        <!-- Botón para cerrar la ventana actual del navegador -->
+        <button class="btn-header cerrar" onclick="window.close()">Cerrar</button>
+    </div>
+</div>
+
+<!-- Contenedor principal con los accesos directos a las funcionalidades del profesor -->
+<div class="contenedor-botones-grid">
+    <!-- Enlace a la vista de creación de nuevas tareas -->
+    <a th:href="@{/profesor/tareas/crear}" class="boton-mensajeria">Alta Tarea</a>
+
+    <!-- Enlace a la gestión del tablón del profesor -->
+    <a th:href="@{/profesor/tablon}" class="boton-mensajeria">Gestión Tablón Profesor</a>
+
+    <!-- Enlace a la vista de correos enviados -->
+    <a th:href="@{/correo}" class="boton-mensajeria">Correo</a>
+</div>
+
+</body>
+</html>

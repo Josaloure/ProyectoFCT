@@ -1,0 +1,77 @@
+/* === BASE === */
+body, html {
+background-image: url('/api/img/fondo.jpeg');
+margin: 0;
+padding: 0;
+font-family: 'Roboto', sans-serif;
+height: 100%;
+}
+
+.pagina-mensajeria {
+background-size: cover;
+background-position: center;
+height: 100vh;
+}
+
+/* === CONTENIDO PRINCIPAL === */
+.contenedor-principal {
+max-width: 700px;
+margin: 80px auto;
+background-color: rgba(255, 255, 255, 0.96);
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+#info-usuario {
+font-size: 18px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+/* === TABLA === */
+table {
+width: 100%;
+border-collapse: collapse;
+}
+
+thead {
+background-color: #586BE5;
+color: white;
+}
+
+th, td {
+padding: 12px;
+border: 1px solid #ccc;
+text-align: center;
+}
+
+/* === BOTONES DE ACCIÓN === */
+button {
+padding: 6px 10px;
+font-size: 14px;
+font-weight: bold;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+color: white;
+transition: opacity 0.2s ease-in-out;
+}
+
+button:hover {
+opacity: 0.9;
+}
+
+/* Estilos diferenciados por orden en el DOM */
+button:nth-child(1) {
+background-color: #3498db; /* azul */
+}
+
+button:nth-child(2) {
+background-color: #e74c3c; /* rojo */
+}

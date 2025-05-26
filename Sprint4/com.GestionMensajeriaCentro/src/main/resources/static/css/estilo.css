@@ -1,0 +1,92 @@
+/* Define la imagen de fondo general para el documento y establece propiedades de fuente,
+   márgenes y altura completa para asegurar que el contenido ocupe toda la pantalla */
+body, html {
+  background-image: url('/api/img/fondo.jpeg');
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+/* Contenedor principal que ocupa toda la pantalla con fondo escalado y centrado.
+   Se posiciona de forma relativa para contener elementos posicionados absolutamente dentro */
+.container {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+/* Posicionamiento del logotipo en la esquina superior izquierda del contenedor */
+.logo-link {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* Tamaño fijo para el logotipo manteniendo proporción de aspecto */
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+/* Contenedor centrado vertical y horizontalmente dentro del viewport */
+.contenido {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Estilo del botón principal del índice o de navegación: tamaño grande,
+   fondo azul, texto blanco y diseño centrado y con sombra */
+.boton-mensajeria {
+  background-color: #586BE5;
+  color: #FFFFFF;
+  padding: 15px 40px;
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  display: block;
+}
+
+/* Cambio de color del botón al pasar el cursor para dar retroalimentación visual */
+.boton-mensajeria:hover {
+  background-color: #06188D;
+}
+
+/* Estilos específicos para la página de mensajería, con fondo personalizado
+   y ocupación total del alto del viewport */
+.pagina-mensajeria {
+  background-image: url('../IMG/fondo.jpeg');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+/* Cabecera con diseño flexible horizontal, fondo semitransparente blanco,
+   y separación entre elementos alineados a la izquierda */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+/* Contenedor de botones en la cabecera, con separación entre elementos y desplazamiento hacia la derecha */
+.header-btns {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-left: 100 /* Nota: esta línea está incompleta y debería terminar con una unidad válida, por ejemplo "px" */;
+}

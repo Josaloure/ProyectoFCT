@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <title>Alta de Mensaje</title>
+
+  <!-- Enlace a la hoja de estilos específica para esta vista -->
+  <link rel="stylesheet" th:href="@{/css/header.css}">
+  <link rel="stylesheet" th:href="@{/css/altaMensaje.css}">
+
+  <!-- Fuente tipográfica utilizada en la interfaz -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Metadatos necesarios para la protección CSRF en formularios y peticiones -->
+  <meta name="_csrf" th:content="${_csrf.token}"/>
+  <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+</head>
+
+<body class="pagina-mensajeria">
+
+<!-- Encabezado común presente en todas las vistas -->
+<div class="header">
+  <a href="https://..." target="_blank" class="logo-link">
+    <img src="/api/img/logotipo.png" alt="Logo" class="logo">
+  </a>
+
+  <div class="header-btns">
+    <a th:href="@{/indice}" class="btn-header">Inicio</a>
+    <a href="javascript:history.back()" class="btn-header">Volver</a>
+    <span class="btn-header activo">Alta mensaje</span>
+    <a th:href="@{/admin/mensajes/vista}" class="btn-header">Lista de mensajes</a>
+    <span sec:authentication="name" class="btn-header"></span>
+
+    <form th:action="@{/logout}" method="post" class="logout-form">
+      <button type="submit" class="btn-header">Cerrar sesión</button>
+    </form>
+
+    <button class="btn-header cerrar" onclick="window.close()">Cerrar</button>
+  </div>
+</div>
+
+
+<!-- Contenedor principal del formulario de creación de mensajes -->
+<div class="contenedor-principal">
+  <h1>Crear Nuevo Mensaje</h1>
+
+  <!-- Formulario para ingresar los datos del mensaje -->
+  <form id="form-mensaje">
+    <!-- Campo de texto para el título del mensaje -->
+    <input type="text" id="titulo" name="titulo" placeholder="Título del mensaje" required>
+
+    <!-- Campo de área de texto para el contenido del mensaje -->
+    <textarea id="contenido" name="contenido" placeholder="Contenido del mensaje" rows="4" required></textarea>
+
+    <!-- Selector para escoger el tablón de centro al que se asociará el mensaje -->
+    <select id="idTablonCentro" name="idTablonCentro" required>
+      <option value="" disabled selected>Seleccione un Tablón de Centro</option>
+      <!-- Las opciones se cargarán dinámicamente mediante JavaScript -->
+    </select>
+
+    <!-- Opción para marcar si el mensaje estará publicado inicialmente -->
+    <label><input type="checkbox" id="publicado"> Publicado</label>
+
+    <!-- Opción para definir si el mensaje será visible para todos los usuarios -->
+    <label><input type="checkbox" id="visibleParaTodos"> Visible para todos</label>
+
+    <!-- Botón para enviar el formulario -->
+    <div class="form-boton">
+      <button type="submit">Guardar Mensaje</button>
+    </div>
+
+    <!-- Contenedor donde se mostrarán mensajes de éxito o error tras enviar el formulario -->
+    <div id="mensaje-feedback"></div>
+  </form>
+</div>
+
+<!-- Inclusión del archivo JavaScript asociado a la lógica del formulario -->
+<script th:src="@{/js/altaMensaje.js}"></script>
+</body>
+</html>

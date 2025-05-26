@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tareas</title>
+
+  <!-- Enlace a la hoja de estilos compartida con la vista de tareas -->
+  <link rel="stylesheet" th:href="@{/css/header.css}">
+  <link rel="stylesheet" th:href="@{/css/altaTarea.css}">
+
+  <!-- Inclusión de tokens CSRF necesarios para proteger formularios y peticiones -->
+  <meta name="_csrf" th:content="${_csrf.token}"/>
+  <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+</head>
+<body class="pagina-mensajeria">
+
+<!-- Cabecera principal con elementos de navegación y sesión -->
+<div class="header">
+  <!-- Logo correctamente posicionado -->
+  <a href="https://blogsaverroes.juntadeandalucia.es/iestorrredelosguzmanes/"
+     target="_blank" class="logo-link">
+    <img src="/api/img/logotipo.png" alt="Logo" class="logo">
+  </a>
+
+  <!--Botonera horizontal con todos los botones alineados -->
+  <div class="header-btns">
+    <a th:href="@{/indice}" class="btn-header">Inicio</a>
+    <a href="javascript:history.back()" class="btn-header">Volver</a>
+    <span class="btn-header activo">Lista de tareas</span>
+    <span sec:authentication="name" class="btn-header"></span>
+
+    <!-- Agrupación para que Cerrar sesión y Cerrar estén uno al lado del otro -->
+    <div class="logout-cerrar-group">
+      <form th:action="@{/logout}" method="post" class="logout-form">
+        <button type="submit" class="btn-header">Cerrar sesión</button>
+      </form>
+
+      <button class="btn-header cerrar" onclick="window.close()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Contenedor principal del listado de tareas -->
+<div class="contenedor-principal">
+  <h1>Tareas registradas</h1>
+
+  <!-- Tabla donde se mostrarán las tareas recuperadas dinámicamente -->
+  <table class="tabla-tareas">
+    <thead>
+    <tr>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th>Fecha creación</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Las filas serán insertadas dinámicamente por JavaScript -->
+    </tbody>
+  </table>
+
+  <!-- Contenedor para mostrar mensajes de retroalimentación (éxito o error) -->
+  <div id="mensaje-feedback" class="mensaje-feedback"></div>
+</div>
+
+<!-- Inclusión del script que gestiona la lógica del listado de tareas -->
+<script th:src="@{/js/tareaLista.js}"></script>
+</body>
+</html>

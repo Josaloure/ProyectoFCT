@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de Tarea</title>
+
+    <!-- Enlace a la hoja de estilos utilizada en la vista -->
+    <link rel="stylesheet" th:href="@{/css/altaTarea.css}">
+</head>
+<body class="pagina-mensajeria">
+
+<!-- Sección de cabecera con controles de navegación -->
+<div class="header">
+    <!-- Enlace para volver a la vista anterior usando el historial del navegador -->
+    <a href="javascript:history.back()" class="btn-header">Volver</a>
+
+    <!-- Enlace a la página principal de la aplicación -->
+    <a th:href="@{/indice}" class="btn-header">Inicio</a>
+</div>
+
+<!-- Contenedor principal que presenta los datos de la tarea seleccionada -->
+<div class="contenedor-principal detalle-tarea">
+    <h1>Detalle de Tarea</h1>
+
+    <!-- Visualización del título de la tarea -->
+    <p><strong>Título:</strong> <span th:text="${tarea.titulo}"></span></p>
+
+    <!-- Visualización de la descripción detallada de la tarea -->
+    <p><strong>Descripción:</strong> <span th:text="${tarea.descripcion}"></span></p>
+
+    <!-- Visualización del estado actual de la tarea -->
+    <p><strong>Estado:</strong> <span th:text="${tarea.estado}"></span></p>
+
+    <!-- Visualización de la fecha en la que se creó la tarea -->
+    <p><strong>Fecha de creación:</strong> <span th:text="${tarea.fechaCreacion}"></span></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial de Correos</title>
+
+    <!-- Enlace a la hoja de estilos específica de esta vista -->
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/historialCorreo.css}">
+
+    <!-- Fuente tipográfica utilizada en el diseño -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+    <!-- Metadatos necesarios para la protección CSRF en formularios y peticiones -->
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+</head>
+
+<body class="pagina-mensajeria">
+
+<!-- Encabezado con logotipo y navegación -->
+<div class="header">
+    <!-- Logo -->
+    <a href="https://blogsaverroes.juntadeandalucia.es/iestorrredelosguzmanes/"
+       target="_blank" class="logo-link">
+        <img src="/api/img/logotipo.png" alt="Logo" class="logo">
+    </a>
+
+    <!-- Botones alineados -->
+    <div class="header-btns">
+        <a href="/api/indice" class="btn-header">Inicio</a>
+        <a href="javascript:history.back()" class="btn-header">Volver</a>
+        <span class="btn-header activo">Historial Correos</span>
+        <span sec:authentication="name" class="btn-header"></span>
+
+        <!-- IMPORTANTE: Cerrar sesión y cerrar dentro de un solo contenedor -->
+        <div class="header-btn-group">
+            <form th:action="@{/logout}" method="post" class="logout-form">
+                <button type="submit" class="btn-header">Cerrar sesión</button>
+            </form>
+
+            <button class="btn-header cerrar" onclick="window.close()">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Contenedor principal de la funcionalidad de correos -->
+<div class="contenedor-principal">
+    <h1>Historial de Correos Enviados</h1>
+
+    <!-- Formulario para crear un nuevo correo -->
+    <form id="form-crear-correo">
+        <!-- Campo para ingresar la dirección de correo del destinatario -->
+        <input type="email" id="destinatarioEmail" placeholder="Destinatario (email)" required>
+
+        <!-- Selector del tipo de notificación asociada (mensaje o tarea) -->
+        <select id="tipoNotificacion" required>
+            <option value="">Tipo de Notificación</option>
+            <option value="MENSAJE">MENSAJE</option>
+            <option value="TAREA">TAREA</option>
+        </select>
+
+        <!-- Campo para ingresar el ID del mensaje o tarea al que está vinculado el correo -->
+        <input type="number" id="idRelacionado" placeholder="ID del mensaje o tarea" required>
+
+        <!-- Botón para enviar el formulario de correo -->
+        <button type="submit">Enviar Correo</button>
+    </form>
+
+    <!-- Contenedor para mostrar mensajes de retroalimentación tras enviar un correo -->
+    <p id="feedback-correo"></p>
+
+    <!-- Tabla que presenta los correos enviados -->
+    <table id="tabla-correos">
+        <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Destinatario</th>
+            <th>Tipo</th>
+            <th>Relacionado</th>
+            <th>Acciones</th> <!-- Columna para acciones como eliminar -->
+        </tr>
+        </thead>
+        <tbody>
+        <!-- El contenido de la tabla se insertará dinámicamente mediante JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Inclusión del archivo JavaScript que contiene la lógica de gestión del historial de correos -->
+<script th:src="@{/js/historialCorreo.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+/* Estilo base del cuerpo y del HTML */
+body, html {
+  background-image: url('/api/img/fondo.jpeg');
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+.pagina-mensajeria {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+/* ========================= */
+/* ==== CONTENEDOR ========= */
+/* ========================= */
+
+.contenedor-principal {
+  max-width: 800px;
+  margin: 120px auto;
+  background-color: rgba(255, 255, 255, 0.65);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.contenedor-principal h1,
+.contenedor-principal h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+/* ========================= */
+/* ==== FORMULARIOS ======== */
+/* ========================= */
+
+form:not(.logout-form) {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+form input,
+form textarea,
+form select {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  resize: vertical;
+}
+
+form button {
+  background-color: #586BE5;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+form button:hover {
+  background-color: #06188D;
+}
+
+/* Estilo específico de logout-form para el botón de cerrar sesión */
+.logout-form {
+  margin: 0;
+}
+
+.logout-form .btn-header {
+  all: unset;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #D9D9D9;
+  border-radius: 4px;
+  color: black;
+}
+
+/* ========================= */
+/* ==== IMPORTAR TAREAS ==== */
+/* ========================= */
+
+#form-importar {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 30px;
+}
+
+#form-importar h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* ========================= */
+/* ==== FEEDBACK =========== */
+/* ========================= */
+
+#mensaje-feedback {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f3f3f3;
+  color: green;
+}
+
+#mensaje-feedback.error {
+  color: red;
+  background-color: #fdeaea;
+  border-color: #dc3545;
+}
+
+/* ========================= */
+/* ==== TABLA DE TAREAS ==== */
+/* ========================= */
+
+.tabla-tareas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.tabla-tareas th, .tabla-tareas td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-tareas th {
+  background-color: #586BE5;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.tabla-tareas tr:hover {
+  background-color: #f2f2f2;
+}
+
+.tabla-tareas td button {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #DC3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tabla-tareas td button:hover {
+  background-color: #b02a37;
+}
+
+/* ========================= */
+/* ==== DETALLE DE TAREA ==== */
+/* ========================= */
+
+.detalle-tarea p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.detalle-tarea strong {
+  display: inline-block;
+  width: 160px;
+  font-weight: bold;
+  color: #333;
+}
+/* Alinea Cerrar sesión y Cerrar */
+.logout-cerrar-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Estilo del formulario logout */
+.logout-form {
+  margin: 0;
+}
+
+/* Asegura que el botón tenga formato uniforme */
+.logout-form .btn-header {
+  all: unset;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #D9D9D9;
+  border-radius: 4px;
+  color: black;
+}
+

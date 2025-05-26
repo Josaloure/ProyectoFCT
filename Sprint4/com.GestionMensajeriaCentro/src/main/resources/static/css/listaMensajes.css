@@ -1,0 +1,326 @@
+/* === Estilos Base === */
+body, html {
+  background-image: url('/api/img/fondo.jpeg');
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  height: 100%;
+}
+
+/* === Cabecera === */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: transparent;
+  min-height: 80px;
+  gap: 30px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.logo-link {
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+/* === Botonera central === */
+.header-btns {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+/* === Botones del header === */
+.btn-header {
+  background-color: #586BE5;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-header:hover {
+  background-color: #3f51c1;
+}
+
+.btn-header.activo {
+  background-color: #3742fa;
+  cursor: default;
+}
+
+/* === Botón "Cerrar" (fuera de header-btns) === */
+.btn-header.cerrar {
+  background-color: #DC3545;
+  color: white;
+}
+
+.btn-header.cerrar:hover {
+  background-color: #b02a37;
+}
+
+/* === Formulario de logout === */
+.logout-form {
+  margin: 0;
+}
+
+.logout-form .btn-header {
+  all: unset;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #586BE5;
+  border-radius: 6px;
+  color: white;
+}
+
+/* === Contenido Principal === */
+.contenedor-principal {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-principal h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* === Tabla de Mensajes === */
+.tabla-mensajes {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-mensajes thead {
+  background-color: #586BE5;
+  color: white;
+}
+
+.tabla-mensajes th,
+.tabla-mensajes td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tabla-mensajes tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* === Botones de acción en la tabla === */
+button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+/* === Feedback de acciones === */
+#mensaje-feedback {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f3f3f3;
+  color: green;
+}
+
+#mensaje-feedback.error {
+  color: red;
+  background-color: #fdeaea;
+  border-color: #dc3545;
+}
+/* === Estilos Base === */
+body, html {
+  background-image: url('/api/img/fondo.jpeg');
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  height: 100%;
+}
+
+/* === Cabecera === */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: transparent;
+  min-height: 80px;
+  gap: 30px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.logo-link {
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+/* === Botonera central === */
+.header-btns {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+/* === Botones del header === */
+.btn-header {
+  background-color: #586BE5;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-header:hover {
+  background-color: #3f51c1;
+}
+
+.btn-header.activo {
+  background-color: #3742fa;
+  cursor: default;
+}
+
+/* === Botón "Cerrar" (fuera de header-btns) === */
+.btn-header.cerrar {
+  background-color: #DC3545;
+  color: white;
+}
+
+.btn-header.cerrar:hover {
+  background-color: #b02a37;
+}
+
+/* === Formulario de logout === */
+.logout-form {
+  margin: 0;
+}
+
+.logout-form .btn-header {
+  all: unset;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #586BE5;
+  border-radius: 6px;
+  color: white;
+}
+
+/* === Contenido Principal === */
+.contenedor-principal {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-principal h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* === Tabla de Mensajes === */
+.tabla-mensajes {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-mensajes thead {
+  background-color: #586BE5;
+  color: white;
+}
+
+.tabla-mensajes th,
+.tabla-mensajes td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tabla-mensajes tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* === Botones de acción en la tabla === */
+button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+/* === Feedback de acciones === */
+#mensaje-feedback {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f3f3f3;
+  color: green;
+}
+
+#mensaje-feedback.error {
+  color: red;
+  background-color: #fdeaea;
+  border-color: #dc3545;
+}

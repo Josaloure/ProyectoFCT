@@ -1,0 +1,151 @@
+/* === ESTILOS BASE === */
+body, html {
+  background-image: url('/api/img/fondo.jpeg');
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+.pagina-mensajeria {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+/* === CABECERA === */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Logo | botones | Cerrar */
+  padding: 10px 30px;
+  background-color: transparent;
+  min-height: 80px;
+  gap: 30px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.logo-link {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.header-btns {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+  justify-content: center; /* centra todos los botones entre logo y cerrar */
+  flex-wrap: nowrap;
+}
+
+.btn-header {
+  background-color: #D9D9D9;
+  color: black;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  flex-shrink: 0;
+}
+
+.btn-header.cerrar {
+  background-color: #DC3545;
+  color: white;
+}
+
+.btn-header.activo {
+  background-color: #586BE5;
+  color: white;
+  cursor: default;
+}
+
+/* === LOGOUT === */
+.logout-form {
+  margin: 0;
+}
+
+.logout-form .btn-header {
+  all: unset;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #D9D9D9;
+  border-radius: 6px;
+  color: black;
+}
+
+/* === CUERPO PRINCIPAL === */
+.contenedor-principal {
+  padding: 30px;
+  max-width: 1000px;
+  margin: 100px auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* === FORMULARIO === */
+form:not(.logout-form) {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+form input,
+form button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background-color: #586BE5;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* === TABLA === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #586BE5;
+  color: white;
+}
+
+td, th {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+/* === BOTÓN ELIMINAR === */
+.btn-eliminar {
+  background-color: #DC3545;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

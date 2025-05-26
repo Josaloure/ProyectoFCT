@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+    <meta charset="UTF-8">
+
+    <!-- Cabecera de la página de error. Se define el título y codificación de caracteres -->
+</head>
+<body>
+
+<!-- Mensaje principal indicando que ha ocurrido un error -->
+<h2>Se ha producido un error</h2>
+
+<!-- Visualización del mensaje de error proporcionado por el controlador.
+     Si no se recibe ninguno, se muestra un mensaje genérico por defecto. -->
+<p th:text="${mensaje} ?: 'Ha ocurrido un problema inesperado. Intenta de nuevo más tarde.'"></p>
+
+<!-- Enlace para que el usuario pueda volver a la página principal -->
+<a href="/">Volver al inicio</a>
+
+</body>
+</html>

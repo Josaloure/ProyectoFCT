@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Admin</title>
+
+    <!-- Enlace al archivo de estilos específico para la vista del panel de administración -->
+    <link rel="stylesheet" th:href="@{/css/indice.css}">
+</head>
+<body class="pagina-mensajeria">
+
+<!-- Cabecera general con logotipo institucional y botones de navegación -->
+<div class="header">
+    <!-- Enlace al sitio web institucional con logotipo del centro -->
+    <a href="https://blogsaverroes.juntadeandalucia.es/iestorrredelosguzmanes/" target="_blank" class="logo-link">
+        <img src="/api/img/logotipo.png" alt="Logo" class="logo">
+    </a>
+
+    <!-- Grupo de botones para navegación y control de sesión -->
+    <div class="header-btns">
+        <!-- Acceso a la página de inicio -->
+        <a th:href="@{/indice}" class="btn-header">Inicio</a>
+
+        <!-- Opción para regresar a la vista anterior mediante historial del navegador -->
+        <a href="javascript:history.back()" class="btn-header">Volver</a>
+
+        <!-- Indicación del nombre de la sección actual -->
+        <span class="btn-header activo">Panel Admin</span>
+
+        <!-- Visualización del nombre del usuario autenticado -->
+        <span sec:authentication="name" class="btn-header"></span>
+
+        <!-- Formulario para cerrar la sesión de manera segura -->
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="btn-header">Cerrar sesión</button>
+        </form>
+
+        <!-- Botón para cerrar la ventana del navegador (válido en ventanas emergentes) -->
+        <button class="btn-header cerrar" onclick="window.close()">Cerrar</button>
+    </div>
+</div>
+
+<!-- Contenedor principal que presenta las opciones de administración mediante botones -->
+<div class="contenedor-botones-grid">
+    <!-- Acceso al formulario de creación de mensajes -->
+    <a th:href="@{/admin/mensajes/crear}" class="boton-mensajeria">Alta Mensaje</a>
+
+    <!-- Acceso a la vista de gestión de tablones del centro -->
+    <a th:href="@{/admin/tablonCentro/vista}" class="boton-mensajeria">Gestión Tablón Centro</a>
+
+    <!-- Acceso a la vista de gestión de correos enviados -->
+    <a th:href="@{/correo}" class="boton-mensajeria">Correo</a>
+</div>
+
+</body>
+</html>

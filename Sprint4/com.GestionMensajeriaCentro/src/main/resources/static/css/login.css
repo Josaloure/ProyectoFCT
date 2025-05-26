@@ -1,0 +1,140 @@
+/* === Estilos Base === */
+body, html {
+  background-image: url('/api/img/fondo.jpeg');
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+/* === Contenedor Principal === */
+.container,
+.pagina-mensajeria {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.pagina-mensajeria {
+  background-image: url('../IMG/fondo.jpeg');
+  margin: 0;
+  padding: 0;
+}
+
+/* === Logotipo === */
+.logo-link {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+/* === Contenido Centrado === */
+.contenido {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* === Botones Principales (Inicio y similares) === */
+.boton-mensajeria,
+.formulario-login button {
+   background-color: #586BE5;
+   color: #FFFFFF;
+   font-weight: bold;
+   border-radius: 6px;
+   border: none;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+   font-size: 18px;
+   padding: 14px 30px;
+   width: 100%;
+   margin-top: 20px;
+}
+
+.boton-mensajeria {
+  padding: 15px 40px;
+  font-size: 32px;
+  text-decoration: none;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.boton-mensajeria:hover,
+.formulario-login button:hover {
+  background-color: #06188D;
+}
+
+/* === Cabecera === */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  gap: 40px;
+}
+
+.header-btns {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 100px;
+}
+
+.btn-header {
+  background-color: #D9D9D9;
+  color: black;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-header.cerrar {
+  background-color: #DC3545;
+  color: white;
+}
+
+/* === Botones en columna === */
+.contenedor-botones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  gap: 20px;
+}
+
+/* === Iconos adicionales === */
+.arrow {
+  font-size: 18px;
+}
+
+/* === Formulario Login === */
+.formulario-login {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  margin: 150px auto;
+  text-align: center;
+}
+
+.formulario-login input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #CCC;
+  border-radius: 6px;
+}

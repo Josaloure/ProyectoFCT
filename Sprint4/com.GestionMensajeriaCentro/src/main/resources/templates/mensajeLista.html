@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <title>Listado de Mensajes</title>
+
+  <!-- Enlace a la hoja de estilos para la vista de lista de mensajes -->
+  <link rel="stylesheet" th:href="@{/css/header.css}">
+  <link rel="stylesheet" th:href="@{/css/listaMensajes.css}">
+
+  <!-- Fuente tipográfica externa utilizada en la interfaz -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Inclusión de tokens necesarios para protección CSRF -->
+  <meta name="_csrf" th:content="${_csrf.token}"/>
+  <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+</head>
+<body class="pagina-mensajeria">
+
+<!-- Encabezado principal con logotipo y opciones de navegación -->
+<div class="header">
+  <!-- Logo a la izquierda -->
+  <a href="https://blogsaverroes.juntadeandalucia.es/iestorrredelosguzmanes/" target="_blank" class="logo-link">
+    <img src="/api/img/logotipo.png" alt="Logo" class="logo">
+  </a>
+
+  <!-- Contenedor central de botones -->
+  <div class="header-btns">
+    <a th:href="@{/indice}" class="btn-header">Inicio</a>
+    <a href="javascript:history.back()" class="btn-header">Volver</a>
+    <span class="btn-header activo">Listado de Mensajes</span>
+    <span sec:authentication="name" class="btn-header"></span>
+    <form th:action="@{/logout}" method="post" class="logout-form">
+      <button type="submit" class="btn-header">Cerrar sesión</button>
+    </form>
+  </div>
+
+  <!-- Botón totalmente a la derecha -->
+  <button class="btn-header cerrar" onclick="window.close()">Cerrar</button>
+</div>
+
+<!-- Contenido principal: listado de mensajes publicados -->
+<div class="contenedor-principal">
+  <h1>Mensajes publicados</h1>
+
+  <!-- Tabla que muestra los mensajes existentes -->
+  <table class="tabla-mensajes">
+    <thead>
+    <tr>
+      <th>Título</th>
+      <th>Contenido</th>
+      <th>Fecha</th>
+      <th>Publicado</th>
+      <th>Visible para todos</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iteración sobre la lista de mensajes recibida desde el controlador -->
+    <tr th:each="mensaje : ${mensajes}">
+      <!-- Campo: título del mensaje -->
+      <td th:text="${mensaje.titulo}">Título</td>
+
+      <!-- Campo: contenido del mensaje -->
+      <td th:text="${mensaje.contenido}">Contenido</td>
+
+      <!-- Campo: fecha de creación del mensaje -->
+      <td th:text="${mensaje.fechaCreacion}">Fecha</td>
+
+      <!-- Campo: estado de publicación (Sí/No) -->
+      <td th:text="${mensaje.publicado ? 'Sí' : 'No'}"></td>
+
+      <!-- Campo: visibilidad general (Sí/No) -->
+      <td th:text="${mensaje.visibleParaTodos ? 'Sí' : 'No'}"></td>
+
+      <!-- Acciones disponibles para el mensaje (por ahora solo eliminar) -->
+      <td>
+        <button class="btn-eliminar" th:attr="data-id=${mensaje.idMensaje}">Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Zona para mostrar mensajes de retroalimentación del sistema (errores o confirmaciones) -->
+  <div id="mensaje-feedback" class="mensaje-feedback"></div>
+</div>
+
+<!-- Inclusión del archivo JavaScript que gestiona la lógica de la tabla de mensajes -->
+<script th:src="@{/js/listaMensajes.js}" th:inline="javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* === HEADER GENERAL === */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: transparent;
+  min-height: 80px;
+  gap: 40px;
+}
+
+/* === LOGO === */
+.logo-link {
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+/* === BOTONERA HEADER === */
+.header-btns {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  flex-wrap: wrap;
+}
+
+/* === ESTILOS BOTONES === */
+.btn-header {
+  background-color: #D9D9D9;
+  color: black;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  flex-shrink: 0;
+}
+
+.btn-header.cerrar {
+  background-color: #DC3545;
+  color: white;
+}
+
+.btn-header.activo {
+  background-color: #586BE5;
+  color: white;
+  cursor: default;
+}
+
+.logout-form {
+  margin: 0;
+}
+
+.logout-form .btn-header {
+  all: unset;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #D9D9D9;
+  border-radius: 4px;
+  color: black;
+}
+

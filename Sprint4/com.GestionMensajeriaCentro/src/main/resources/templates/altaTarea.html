@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Importar/Exportar Tarea</title>
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/altaTarea.css}">
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
+</head>
+<body class="pagina-mensajeria">
+
+<!-- Header -->
+<div class="header">
+    <a href="https://blogsaverroes.juntadeandalucia.es/iestorrredelosguzmanes/" target="_blank" class="logo-link">
+        <img src="/api/img/logotipo.png" alt="Logo" class="logo">
+    </a>
+
+    <div class="header-btns">
+        <a th:href="@{/indice}" class="btn-header">Inicio</a>
+        <a href="javascript:history.back()" class="btn-header">Volver</a>
+        <span class="btn-header activo">Importar tarea</span>
+        <button class="btn-header" onclick="window.location.href='/api/profesor/tareas/vista'">Ver lista de tareas</button>
+
+        <!-- Botón de logout con mismo estilo -->
+        <form th:action="@{/logout}" method="post" style="margin: 0;">
+            <button type="submit" class="btn-header" style="all: unset; cursor: pointer; padding: 10px 20px; font-size: 16px; font-weight: bold; background-color: #D9D9D9; border-radius: 4px;">Cerrar sesión</button>
+        </form>
+
+        <button class="btn-header cerrar" onclick="window.close()">Cerrar</button>
+    </div>
+</div>
+
+<!-- Contenido principal -->
+<div class="contenedor-principal">
+    <h1>Importar tarea externa</h1>
+
+    <form id="form-importar">
+        <input type="text" id="importar-titulo" placeholder="Título de la tarea externa" required>
+        <input type="text" id="importar-descripcion" placeholder="Descripción de la tarea externa" required>
+
+        <select id="importar-idTablon" required>
+            <option value="">Selecciona un tablón</option>
+        </select>
+
+        <select id="importar-estado" required>
+            <option value="">Selecciona estado</option>
+            <option value="PENDIENTE">Pendiente</option>
+            <option value="EN_CURSO">En curso</option>
+            <option value="FINALIZADA">Finalizada</option>
+        </select>
+
+        <select id="importar-categoria" required>
+            <option value="">Selecciona categoría</option>
+            <option value="TUTORÍAS">Tutorías</option>
+            <option value="REUNIONES">Reuniones</option>
+            <option value="EXÁMENES">Exámenes</option>
+            <option value="EVALUACIONES">Evaluaciones</option>
+            <option value="EXPULSIONES">Expulsiones</option>
+        </select>
+
+        <select id="importar-prioridad" required>
+            <option value="">Selecciona prioridad</option>
+            <option value="ALTA">Alta</option>
+            <option value="MEDIA">Media</option>
+            <option value="BAJA">Baja</option>
+        </select>
+
+        <select id="importar-receptor" required>
+            <option value="">Selecciona receptor</option>
+        </select>
+
+        <button type="submit">Importar tarea</button>
+        <div id="mensaje-feedback"></div>
+    </form>
+
+    <!-- Comentarios -->
+    <div style="margin-top: 30px;">
+        <h2>Comentarios</h2>
+
+        <form id="form-comentario">
+            <label for="comentario-idTarea">Selecciona tarea:</label>
+            <select id="comentario-idTarea" required>
+                <option value="">Selecciona una tarea</option>
+            </select>
+
+            <label for="comentario-idUsuario">Selecciona usuario:</label>
+            <select id="comentario-idUsuario" required>
+                <option value="">Selecciona un usuario</option>
+            </select>
+
+            <textarea id="comentario-contenido" placeholder="Escribe tu comentario aquí" required></textarea>
+            <button type="submit">Agregar comentario</button>
+        </form>
+
+        <p id="feedback-comentario"></p>
+        <ul id="lista-comentarios"></ul>
+    </div>
+</div>
+
+<script th:src="@{/js/altaTarea.js}"></script>
+</body>
+</html>
